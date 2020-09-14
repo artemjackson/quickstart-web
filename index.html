@@ -75,7 +75,11 @@
           onFPSUpdate: fps => $("#frx").text(Math.floor(fps)),
         })
 
-        player.use(new Webcam())
+        player.use(new Webcam({
+            width: 320,
+            height: 480,
+            resizeMode: "crop-and-scale", // optional
+        }))
 
         Dom.render(player, "#webar")
 
